@@ -1,8 +1,9 @@
 import React from "react";
 
-import { Container, Sidenav, Content } from "./styles";
+import { Container, Content } from "./styles";
 
 import Navbar from "../../../components/Navbar";
+import Sidenav from "../../../components/Sidenav";
 
 const DashboardLayout: React.FC = ({ children }) => {
   return (
