@@ -4,12 +4,6 @@ export const Container = styled.div`
   height: 100%;
 `;
 
-export const Navbar = styled.div`
-  height: 65px;
-  background: white;
-  border-bottom: 3px solid #f1f1f4;
-`;
-
 export const Sidenav = styled.div`
   position: fixed;
   width: 90px;
