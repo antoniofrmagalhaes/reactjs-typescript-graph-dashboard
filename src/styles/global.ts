@@ -19,4 +19,7 @@ export default createGlobalStyle`
     background: #F5F5FB;
   }
 
+  button {
+    cursor: pointer;
+  }
 `;
