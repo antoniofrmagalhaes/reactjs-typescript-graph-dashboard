@@ -8,10 +8,9 @@ import {
   Container,
   SearchComponent,
   SearchIcon,
-  RoundButton,
-  MessageIcon,
   ProfileButton,
 } from "./styles";
+import Messages from "../Messages";
 
 const Navbar: React.FC = () => {
   return (
@@ -21,9 +20,7 @@ const Navbar: React.FC = () => {
         <input type="text" placeholder="search for something..." />
       </SearchComponent>
       <Notifications />
-      <RoundButton>
-        <MessageIcon />
-      </RoundButton>
+      <Messages />
       <ProfileButton>
         <p>Eduardo Nevanden</p>
         <img src={profile} alt="Eduardo Nevanden" />
