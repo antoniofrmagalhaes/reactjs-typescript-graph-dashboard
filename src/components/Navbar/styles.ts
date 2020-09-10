@@ -30,23 +30,3 @@ export const SearchIcon = styled(MdSearch)`
   margin-right: 10px;
   color: #8e8e8e;
 `;
-
-export const ProfileButton = styled.button.attrs({
-  type: "button",
-})`
-  display: flex;
-  align-items: center;
-  border: none;
-  background: none;
-  p {
-    white-space: nowrap;
-    overflow: hidden;
-    margin-right: 10px;
-  }
-  img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-`;
