@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MdSearch, MdNotificationsActive, MdEmail } from "react-icons/md";
+import { MdSearch, MdEmail } from "react-icons/md";
 
 export const Container = styled.div`
   height: 65px;
@@ -43,11 +43,6 @@ export const RoundButton = styled.button.attrs({
   border-radius: 20px;
   border: none;
   background: #f5f5fb;
-`;
-
-export const NotificationsIcon = styled(MdNotificationsActive)`
-  font-size: 25px;
-  color: #4e4e4e;
 `;
 
 export const MessageIcon = styled(MdEmail)`

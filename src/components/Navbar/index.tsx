@@ -2,12 +2,13 @@ import React from "react";
 
 import profile from "../../assets/images/profile/profile.png";
 
+import Notifications from "../Notifications";
+
 import {
   Container,
   SearchComponent,
   SearchIcon,
   RoundButton,
-  NotificationsIcon,
   MessageIcon,
   ProfileButton,
 } from "./styles";
@@ -19,9 +20,7 @@ const Navbar: React.FC = () => {
         <SearchIcon />
         <input type="text" placeholder="search for something..." />
       </SearchComponent>
-      <RoundButton>
-        <NotificationsIcon />
-      </RoundButton>
+      <Notifications />
       <RoundButton>
         <MessageIcon />
       </RoundButton>
