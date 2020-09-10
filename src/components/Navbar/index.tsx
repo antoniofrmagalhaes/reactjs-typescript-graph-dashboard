@@ -1,16 +1,10 @@
 import React from "react";
 
-import profile from "../../assets/images/profile/profile.png";
-
 import Notifications from "../Notifications";
-
-import {
-  Container,
-  SearchComponent,
-  SearchIcon,
-  ProfileButton,
-} from "./styles";
 import Messages from "../Messages";
+import Profile from "../Profile";
+
+import { Container, SearchComponent, SearchIcon } from "./styles";
 
 const Navbar: React.FC = () => {
   return (
@@ -21,10 +15,7 @@ const Navbar: React.FC = () => {
       </SearchComponent>
       <Notifications />
       <Messages />
-      <ProfileButton>
-        <p>Eduardo Nevanden</p>
-        <img src={profile} alt="Eduardo Nevanden" />
-      </ProfileButton>
+      <Profile />
     </Container>
   );
 };
