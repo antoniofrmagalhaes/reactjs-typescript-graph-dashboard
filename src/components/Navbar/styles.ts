@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MdSearch, MdEmail } from "react-icons/md";
+import { MdSearch } from "react-icons/md";
 
 export const Container = styled.div`
   height: 65px;
@@ -29,25 +29,6 @@ export const SearchIcon = styled(MdSearch)`
   font-size: 30px;
   margin-right: 10px;
   color: #8e8e8e;
-`;
-
-export const RoundButton = styled.button.attrs({
-  type: "button",
-})`
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 16px;
-  border-radius: 20px;
-  border: none;
-  background: #f5f5fb;
-`;
-
-export const MessageIcon = styled(MdEmail)`
-  font-size: 25px;
-  color: #4e4e4e;
 `;
 
 export const ProfileButton = styled.button.attrs({
