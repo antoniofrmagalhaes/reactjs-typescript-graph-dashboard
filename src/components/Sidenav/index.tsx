@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
+import CustomLink from "../CustomLink";
+
 import {
   Container,
-  MenuButtonContainer,
   MenuButton,
   Bars,
   Navigator,
@@ -16,27 +17,55 @@ import {
 const Sidenav: React.FC = () => {
   const [open, setOpen] = useState(false);
   return (
-    <Container>
-      <MenuButtonContainer>
-        <MenuButton onClick={() => setOpen(!open)} open={open}>
-          <Bars open={open} />
-        </MenuButton>
-      </MenuButtonContainer>
-      <Navigator>
+    <Container open={open}>
+      <MenuButton onClick={() => setOpen(!open)} open={open}>
+        <Bars open={open} />
+      </MenuButton>
+      <Navigator open={open}>
         <li>
-          <DashboardIcon />
+          <CustomLink
+            to="/"
+            icon={DashboardIcon}
+            open={open}
+            label="Dashboard"
+            onClick={() => setOpen(false)}
+          />
         </li>
         <li>
-          <InfoIcon />
+          <CustomLink
+            to="/informations"
+            icon={InfoIcon}
+            open={open}
+            label="Informations"
+            onClick={() => setOpen(false)}
+          />
         </li>
         <li>
-          <DesktopIcon />
+          <CustomLink
+            to="/desktops"
+            icon={DesktopIcon}
+            open={open}
+            label="Desktops"
+            onClick={() => setOpen(false)}
+          />
         </li>
         <li>
-          <OrdersIcon />
+          <CustomLink
+            to="/orders"
+            icon={OrdersIcon}
+            open={open}
+            label="Orders"
+            onClick={() => setOpen(false)}
+          />
         </li>
         <li>
-          <SettingsIcon />
+          <CustomLink
+            to="/settings"
+            icon={SettingsIcon}
+            open={open}
+            label="Settings"
+            onClick={() => setOpen(false)}
+          />
         </li>
       </Navigator>
     </Container>
