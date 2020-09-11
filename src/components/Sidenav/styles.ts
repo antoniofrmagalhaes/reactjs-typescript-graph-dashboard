@@ -6,55 +6,91 @@ import {
   MdDns,
   MdSettings,
 } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 interface ContainerProps {
   open: boolean;
+  active?: boolean;
 }
 
-export const Container = styled.div`
-  position: fixed;
-  width: 90px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const Container = styled.div<ContainerProps>`
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  padding: calc(40px + 16px) 0;
   background: white;
   border-right: 3px solid #f1f1f4;
-`;
-
-export const MenuButtonContainer = styled.div`
-  width: 90px;
-  height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transform: translateX(-100%);
+  transition: all 350ms ease;
+  ${(props) =>
+    props.open &&
+    css`
+      transform: translateX(0);
+    `}
+  @media(min-width: 420px) {
+    width: 90px;
+    padding: calc(40px + 32px) 0;
+    transform: translateX(0);
+    ${(props) =>
+      props.open &&
+      css`
+        width: 300px;
+      `}
+  }
+  @media (min-width: 1024px) {
+    width: 250px;
+  }
+  @media (min-width: 1300px) {
+    width: 300px;
+  }
 `;
 
 export const MenuButton = styled.div<ContainerProps>`
   cursor: pointer;
-  z-index: 999;
-  position: relative;
+  position: absolute;
   width: 40px;
   height: 40px;
+  top: 8px;
+  right: -56px;
   border-radius: 3px;
+  transition: all 350ms ease;
+  ${(props) =>
+    props.open &&
+    css`
+      right: 8px;
+    `}
+  @media(min-width: 420px) {
+    top: 16px;
+    right: calc(50% - 20px);
+    ${(props) =>
+      props.open &&
+      css`
+        right: 8px;
+      `}
+  }
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;
 
 const open = css`
-  background-color: transparent;
+  width: 25px;
 `;
 
 const afterOpen = css`
-  top: 0;
+  width: 17px;
+  top: -11px;
+  left: -18px;
   transform: rotate(-45deg);
 `;
 
 const beforeOpen = css`
-  top: 0;
+  width: 17px;
+  top: 12px;
+  left: -18px;
   transform: rotate(45deg);
   @supports (-moz-appearance: none) {
-    top: 0rem;
+    top: 8px;
   }
 `;
 
@@ -70,7 +106,9 @@ export const Bars = styled.span<ContainerProps>`
   margin: auto;
   background-color: #4e4e4e;
   transition: 150ms;
-  ${(props) => props.open && open}
+  @media (max-width: 1024px) {
+    ${(props) => props.open && open}
+  }
   &::before {
     content: "";
     position: absolute;
@@ -87,7 +125,9 @@ export const Bars = styled.span<ContainerProps>`
     @supports (-moz-appearance: none) {
       top: 0.8rem;
     }
-    ${(props) => props.open && beforeOpen}
+    @media (max-width: 1024px) {
+      ${(props) => props.open && beforeOpen}
+    }
   }
   &::after {
     content: "";
@@ -101,38 +141,72 @@ export const Bars = styled.span<ContainerProps>`
     margin: auto;
     background-color: #4e4e4e;
     transition: 250ms;
-    ${(props) => props.open && afterOpen}
+    @media (max-width: 1024px) {
+      ${(props) => props.open && afterOpen}
+    }
   }
 `;
 
-export const Navigator = styled.ul`
+export const Navigator = styled.ul<ContainerProps>`
+  width: calc(100% + 1px);
   color: #4e4e4e;
   li {
-    width: 90px;
+    width: 100%;
     height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ebeaef;
+  }
+  @media (min-width: 420px) {
+    li {
+      a {
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    li {
+      height: 60px;
+      font-size: 14px;
+      a {
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  @media (min-width: 1300px) {
+    li {
+      height: 60px;
+      font-size: 16px;
+      a {
+        span {
+          margin-left: 16px;
+        }
+        svg {
+          font-size: 24px;
+        }
+      }
+    }
   }
 `;
 
-export const DashboardIcon = styled(MdDashboard)`
-  font-size: 24px;
-`;
+export const DashboardIcon = styled(MdDashboard)``;
 
-export const InfoIcon = styled(MdInfoOutline)`
-  font-size: 24px;
-`;
+export const InfoIcon = styled(MdInfoOutline)``;
 
-export const DesktopIcon = styled(MdDesktopWindows)`
-  font-size: 24px;
-`;
+export const DesktopIcon = styled(MdDesktopWindows)``;
 
-export const OrdersIcon = styled(MdDns)`
-  font-size: 24px;
-`;
+export const OrdersIcon = styled(MdDns)``;
 
-export const SettingsIcon = styled(MdSettings)`
-  font-size: 24px;
+export const SettingsIcon = styled(MdSettings)``;
+
+export const Link = styled(NavLink)<ContainerProps>`
+  display: flex;
+  align-items: center;
+  ${(props) =>
+    props.active &&
+    css`
+      border-left: 3px solid #4e4e4e;
+      background: #ebeaef;
+    `}
 `;

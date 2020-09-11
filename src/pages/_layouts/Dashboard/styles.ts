@@ -6,5 +6,14 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   height: calc(100% - 65px);
-  margin-left: 90px;
+  padding-top: 65px;
+  @media (min-width: 420px) {
+    margin-left: 90px;
+  }
+  @media (min-width: 1024px) {
+    margin-left: 250px;
+  }
+  @media (min-width: 1300px) {
+    margin-left: 300px;
+  }
 `;
